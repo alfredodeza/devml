@@ -27,9 +27,8 @@ setup(
     zip_safe=False,
     platforms='any',
     install_requires=[
-        'pandas',
-        'click',
-        'PyGithub',
+        'pandas', 'click==1.1.1', 'PyGithub',
+        'click==1.1.1',
         'gitpython',
         'sensible',
         'scipy',

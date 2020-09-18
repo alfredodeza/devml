@@ -12,3 +12,4 @@ matplotlib
 PyGithub
 gitpython
 sqlalchemy
+requests==0.0.1
