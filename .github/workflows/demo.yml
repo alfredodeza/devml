@@ -7,7 +7,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
     - uses: actions/checkout@v2
-    - uses: anchore/scan-action@v2-grype
+    - uses: anchore/scan-action@main
       with:
         image-reference: "dir://."
         debug: true
