@@ -11,3 +11,10 @@ jobs:
       with:
         image-reference: "dir://."
         debug: true
+
+    - name: anchore action SARIF report
+      run: cat results.sarif
+    - name: upload Anchore scan SARIF report
+      uses: github/codeql-action/upload-sarif@v1
+      with:
+        sarif_file: results.sarif
