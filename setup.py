@@ -7,8 +7,10 @@ from setuptools import setup
 
 from devml import __version__
 
-if os.path.exists('README.rst'):
-    LONG = open('README.rst').read()
+if os.path.exists('README.md'):
+    LONG = open('README.md').read()
+else:
+    LONG = ''
 
 setup(
     name='devml',
@@ -17,7 +19,7 @@ setup(
     license='MIT',
     author='Noah Gift',
     author_email='consulting@noahgift.com',
-    description="""Machine Learning, Statistics and Utilities around Developer Productivity, 
+    description="""Machine Learning, Statistics and Utilities around Developer Productivity,
         Company Productivity and Project Productivity""",
     long_description=LONG,
     packages=['devml'],
@@ -25,9 +27,8 @@ setup(
     zip_safe=False,
     platforms='any',
     install_requires=[
-        'pandas',
-        'click',
-        'PyGithub',
+        'pandas', 'click==1.1.1', 'PyGithub',
+        'click==1.1.1',
         'gitpython',
         'sensible',
         'scipy',

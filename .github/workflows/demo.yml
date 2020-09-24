@@ -1,0 +1,21 @@
+name: "Run Anchore Scan Action"
+
+on: [pull_request]
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@v2
+    - uses: anchore/scan-action@main
+      with:
+        image-reference: "dir://."
+        debug: true
+        acs-report-enable: true
+
+    - name: anchore action SARIF report
+      run: cat results.sarif
+    - name: upload Anchore scan SARIF report
+      uses: github/codeql-action/upload-sarif@v1
+      with:
+        sarif_file: results.sarif
