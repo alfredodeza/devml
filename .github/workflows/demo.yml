@@ -11,6 +11,7 @@ jobs:
       with:
         image-reference: "dir://."
         debug: true
+        acs-report-enable: true
 
     - name: anchore action SARIF report
       run: cat results.sarif
